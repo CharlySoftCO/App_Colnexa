@@ -1,5 +1,7 @@
 'use client';
 import { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import styles from '../login/page.module.css';
 
 export default function RegisterPage() {
@@ -18,10 +20,14 @@ export default function RegisterPage() {
             <svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.5 16L6 10.5L11.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
             Atrás
           </a>
-          <img
+          <Image
             src="/logo.jpg"
             alt="Logo Colnexa"
             className={styles.logo}
+            width={110}
+            height={40}
+            priority
+            style={{ objectFit: 'contain' }}
           />
           <div className={styles.title}>Crear cuenta</div>
 
@@ -186,14 +192,14 @@ export default function RegisterPage() {
             }}
             tabIndex={0}
           >
-            <img src="/google.png" alt="Google" style={{ width: '1.5em', height: '1.5em', display: 'inline-block', marginRight: '0.5em' }} />
+            <Image src="/google.png" alt="Google" width={24} height={24} style={{ display: 'inline-block', marginRight: '0.5em', objectFit: 'contain' }} />
             <span style={{ fontWeight: 600, color: '#222' }}>Registrarse con Google</span>
           </button>
 
           <div style={{ width: '100%', textAlign: 'center', marginTop: '0.7rem' }}>
-            <a href="/" style={{ color: '#0070f3', textDecoration: 'underline', fontWeight: 500, fontSize: '1.05rem' }}>
+            <Link href="/" style={{ color: '#0070f3', textDecoration: 'underline', fontWeight: 500, fontSize: '1.05rem' }}>
               ¿Ya tienes cuenta? Inicia sesión
-            </a>
+            </Link>
           </div>
         </form>
       </div>
